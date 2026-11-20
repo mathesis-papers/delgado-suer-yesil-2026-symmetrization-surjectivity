@@ -1,0 +1,302 @@
+\documentclass[11pt]{article}
+\usepackage[a4paper,margin=27mm]{geometry}
+\usepackage[T1]{fontenc}
+\usepackage{amsmath,amssymb,amsthm,booktabs,tabularx}
+\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
+\setlength{\emergencystretch}{2em}
+\newtheorem{theorem}{Theorem}
+\newtheorem{corollary}[theorem]{Corollary}
+\newcommand{\N}{\mathbb{N}_0}
+\newcommand{\PF}{\operatorname{PF}}
+\newcommand{\AS}{\mathcal{AS}}
+\title{A negative answer to Delgado, S\"uer and Ye\c{s}il's\protect\\symmetrization question}
+\author{Haobo Ma\thanks{ChronoAI Pte Ltd, Singapore.}
+\and Wenlin Zhang\thanks{National University of Singapore; ChronoAI Pte Ltd, Singapore.}}
+\date{19 November 2026}
+
+\begin{document}
+\maketitle
+\begin{abstract}
+The surjectivity question in the final paragraph of Section~5, p.~9,
+of Delgado, S\"uer and Ye\c{s}il's \emph{A Symmetrization for Almost
+Symmetric Numerical Semigroups} (arXiv:2611.14268v1) has a negative answer:
+pseudo-Frobenius row deletion always leaves $1$ as a gap.
+The symmetric numerical set $\{0,1\}\cup\{n\in\N:n\geq4\}$ is therefore
+not in the image. In fact, at least half of all symmetric numerical sets
+with any prescribed odd Frobenius number at least $3$ are excluded.
+Every symmetric numerical semigroup, in contrast, is fixed by the map.
+We identify the entire fiber over the target with sole gap $1$ and obtain
+at most $2^{\lfloor(F+1)/2\rfloor-1}$ distinct images of sources with
+Frobenius number $F$.
+\end{abstract}
+
+\section{The question and the row-deletion map}
+Delgado, S\"uer and Ye\c{s}il construct a map $\Phi$ from almost symmetric
+numerical semigroups to symmetric numerical sets \cite[Theorem~4.2]{DSY}.
+They ask whether $\Phi$ is surjective \cite[Section~5, p.~9, final paragraph]{DSY}.
+The distinction between a numerical set and a numerical semigroup is decisive:
+the former may contain $1$ without being all of $\N$, whereas the latter cannot.
+We show that the construction never produces such a target.
+An earlier construction of Ye\c{s}il treats almost symmetric semigroups whose
+nonmaximal pseudo-Frobenius numbers form a consecutive block
+\cite[Lemma~5.7]{Y}; the general construction in \cite[Theorem~4.2]{DSY}
+removes that restriction. The obstruction below does not require any
+restriction on the positions of the pseudo-Frobenius numbers, or even
+almost symmetry of the source.
+The correspondence between omission of $1$ and a bottom row of length one
+is explicit in S\"uer and Ye\c{s}il \cite[Proposition~3.5 and Corollary~3.6]{SY}.
+The issue here is that this property survives the prescribed row deletion.
+
+A \emph{numerical set} is a cofinite subset $U$ of
+$\N=\{0,1,2,\ldots\}$ containing $0$. It is \emph{proper} if $U\ne\N$.
+Write $G(U)=\N\setminus U$ for its nonempty finite gap set,
+$F(U)=\max G(U)$ for its Frobenius number, and $g(U)=|G(U)|$ for its genus.
+A numerical set is a \emph{numerical semigroup} if it is closed under addition.
+For a proper numerical semigroup $S$, put
+\[
+ \PF(S)=\{f\in G(S): f+s\in S\text{ for every }s\in S\setminus\{0\}\},
+ \qquad t(S)=|\PF(S)|.
+\]
+It is \emph{almost symmetric} if $2g(S)=F(S)+t(S)$.
+A proper numerical set $U$ is \emph{symmetric} if exactly one of $a$ and
+$F(U)-a$ belongs to $U$ for every integer $0\leq a\leq F(U)$.
+
+The numerical-set/Young-diagram correspondence numbers boundary steps starting
+at $0$: a member gives a right step and a gap gives an up step
+\cite[Section~2, pp.~4--5]{KN}.
+Thus the row corresponding to a gap $r$ has length
+\[
+ \ell_S(r)=|S\cap\{0,\ldots,r-1\}|.
+\]
+Following \cite[Theorem~4.2]{DSY}, delete the rows whose \emph{original}
+labels belong to $D(S)=\PF(S)\setminus\{F(S)\}$.
+Every retained up step shifts left in the label sequence by the number of
+deleted steps before it. Consequently the output has gap set
+\begin{equation}\label{eq:gaps}
+ G(\Phi(S))=
+ \bigl\{r-|\{d\in D(S):d<r\}|:\ r\in G(S)\setminus D(S)\bigr\}.
+\end{equation}
+This formula makes sense for every proper numerical semigroup; we use $\Phi$
+also for this extension, without asserting that its output is symmetric.
+The Frobenius row is retained, and retained labels stay positive and strictly
+increasing: between two retained labels $r<r'$ there are at most $r'-r-1$
+deleted labels. Hence the formula defines a proper numerical set.
+Since exactly $t(S)-1$ rows below the Frobenius row are deleted,
+\begin{equation}\label{eq:shifts}
+ g(\Phi(S))=g(S)-t(S)+1,\qquad
+ F(\Phi(S))=F(S)-t(S)+1.
+\end{equation}
+On almost symmetric semigroups it is the original map, whose symmetric-output
+property is proved in \cite[Theorem~4.2]{DSY}.
+
+\section{The obstruction}
+\begin{theorem}\label{thm:one}
+For every proper numerical semigroup $S$, one has $1\notin\Phi(S)$.
+In particular, $\Phi:\AS\longrightarrow\{\text{symmetric numerical sets}\}$
+is not surjective, where $\AS$ denotes the proper almost symmetric
+numerical semigroups.
+\end{theorem}
+\begin{proof}
+First, $1\notin S$, since additive closure would otherwise imply $S=\N$.
+If $1\notin\PF(S)$, the gap labelled $1$ is retained. No positive gap precedes
+it, so its new label in \eqref{eq:gaps} is still $1$.
+
+Suppose instead that $1\in\PF(S)$, and let $m=\min(S\setminus\{0\})$.
+The defining property of $\PF(S)$ gives $s+1\in S$ for every positive
+$s\in S$. Starting from $m\in S$, induction gives every integer at least $m$.
+By minimality of $m$,
+\[
+ S=\{0\}\cup\{n\in\N:n\geq m\},\qquad
+ G(S)=\{1,\ldots,m-1\},\qquad m\geq2.
+\]
+Every gap is then pseudo-Frobenius, because adding any positive member of $S$
+gives an integer at least $m$. The deletion removes the labels
+$1,\ldots,m-2$, leaving only $F(S)=m-1$, whose new label is
+$(m-1)-(m-2)=1$. This includes the boundary case $m=2$, when no row is deleted.
+Thus $1$ is a gap of $\Phi(S)$ in both cases.
+
+Now let $T=\{0,1\}\cup\{n\in\N:n\geq4\}$.
+It has gaps $\{2,3\}$ and Frobenius number $3$. In the complementary pairs
+$\{0,3\}$ and $\{1,2\}$ exactly one element belongs to $T$, so $T$ is symmetric.
+Since $1\in T$, the first assertion excludes $T$ from the image of $\Phi$.
+\end{proof}
+
+The total count in the next statement is due to Marzuola and Miller
+\cite[p.~12]{MM}; the exclusion bound follows by applying Theorem~\ref{thm:one}.
+\begin{corollary}\label{cor:half}
+For each integer $h\geq2$, there are $2^{h-1}$ symmetric numerical sets
+with Frobenius number $2h-1$, and at least $2^{h-2}$ of them are outside
+the image of $\Phi$, regardless of the source Frobenius number.
+\end{corollary}
+\begin{proof}
+The pair $\{0,2h-1\}$ has prescribed member $0$ and prescribed gap $2h-1$.
+In each of the remaining $h-1$ pairs $\{a,2h-1-a\}$, $1\leq a\leq h-1$,
+choose independently which element belongs to the numerical set, and include
+all integers larger than $2h-1$. These choices give exactly the
+$2^{h-1}$ symmetric numerical sets in question.
+Exactly $2^{h-2}$ choices include $1$, and Theorem~\ref{thm:one} excludes all
+of them. No proper symmetric numerical set has even Frobenius number, since
+its midpoint could not satisfy the defining condition. At Frobenius number
+$1$, the sole target is $\N\setminus\{1\}$, which is fixed by $\Phi$.
+\end{proof}
+
+\begin{corollary}\label{cor:fixed}
+Every proper symmetric numerical semigroup $S$ is almost symmetric and
+satisfies $\Phi(S)=S$. Thus every symmetric numerical semigroup occurs in
+the image. Conversely, among proper numerical semigroups, these are exactly
+the fixed points of the extended map.
+\end{corollary}
+\begin{proof}
+For a gap $f<F(S)$, symmetry gives $F(S)-f\in S\setminus\{0\}$.
+Since $f+(F(S)-f)=F(S)$ is a gap, $f$ is not pseudo-Frobenius.
+The largest gap $F(S)$ is always pseudo-Frobenius, so
+$\PF(S)=\{F(S)\}$. Symmetry pairs each gap with a member in
+$\{0,\ldots,F(S)\}$, giving $2g(S)=F(S)+1=F(S)+t(S)$.
+Thus $S$ is almost symmetric, and $D(S)$ is empty, so no row is deleted.
+
+Conversely, if $\Phi(S)=S$, the genus identity in \eqref{eq:shifts} gives
+$t(S)=1$, so $\PF(S)=\{F(S)\}$. For a gap $a$, choose the largest gap
+$b$ in the nonempty finite set $(a+S)\cap G(S)$. Adding any positive
+$s\in S$ cannot give another gap, by maximality of $b$, so $b\in\PF(S)$.
+Thus $b=F(S)$ and $F(S)-a\in S$.
+If instead $a\in S$ with $0\leq a\leq F(S)$, additive closure precludes
+$F(S)-a\in S$. This proves symmetry.
+\end{proof}
+
+\begin{corollary}\label{cor:fiber}
+Let $U_1=\N\setminus\{1\}$. Among all proper numerical semigroups,
+\[
+ \Phi(S)=U_1\quad\Longleftrightarrow\quad
+ S=O_m:=\{0\}\cup\{n\in\N:n\geq m\}\quad\text{for some }m\geq2.
+\]
+Every $O_m$ is almost symmetric. Hence $U_1$ has an infinite fiber, with
+exactly one source of each positive Frobenius number.
+\end{corollary}
+\begin{proof}
+If $\Phi(S)=U_1$, \eqref{eq:shifts} gives $g(S)=t(S)$.
+All gaps are then pseudo-Frobenius; in particular $1\in\PF(S)$.
+The proof of Theorem~\ref{thm:one} shows that $S=O_m$.
+Conversely, that proof gives $\Phi(O_m)=U_1$.
+For $O_m$, $F=m-1$ and $g=t=m-1$, so $2g=F+t$.
+The only ordinary source of Frobenius $F$ is $O_{F+1}$.
+\end{proof}
+
+\begin{corollary}\label{cor:source-bound}
+For $F\geq1$, let $\AS_F$ be the almost symmetric numerical semigroups
+of Frobenius number $F$, $\mathcal S_F=\Phi(\AS_F)$, and
+$\mathcal{NS}_F$ the semigroups in $\mathcal S_F$, as in
+\cite[Section~5, pp.~8--9]{DSY}. Then
+\[
+ 1\leq|\mathcal{NS}_F|\leq|\mathcal S_F|
+ \leq 2^{\lfloor(F+1)/2\rfloor-1}.
+\]
+Every output has Frobenius number $2(F-g(S)+1)-1\leq F$.
+\end{corollary}
+\begin{proof}
+For $S\in\AS_F$, almost symmetry and \eqref{eq:shifts} give
+$g(\Phi(S))=F-g(S)+1$ and $F(\Phi(S))=2g(\Phi(S))-1$.
+Since $t(S)\geq1$, the latter is at most $F$.
+Put $H=\lfloor(F+1)/2\rfloor$. At output Frobenius number $1$ there is
+one symmetric target. At output Frobenius number $2h-1$, $h\geq2$,
+Theorem~\ref{thm:one} leaves at most $2^{h-2}$ possible targets,
+by the pair count in Corollary~\ref{cor:half}.
+Summing over $1\leq h\leq H$ gives
+$1+\sum_{h=2}^{H}2^{h-2}=2^{H-1}$, also when $H=1$.
+Finally $O_{F+1}\in\AS_F$ has semigroup image $U_1$, proving the lower bound.
+\end{proof}
+
+\section{Relation to the neighboring questions}
+The fixed-source bound concerns the paper's $\mathcal S_F$, not all targets
+of a fixed output Frobenius number. The exact ordinary fiber strengthens
+the source's noninjectivity examples. The bound does not decide the asymptotic
+ratios plotted in Section~5 or which remaining targets occur.
+
+\smallskip
+\begingroup\small
+\noindent\begin{tabularx}{\linewidth}{@{}p{0.40\linewidth}X@{}}
+\toprule
+Source item in \cite{DSY} & Coverage \\
+\midrule
+Section~3, Proposition~3.2; Section~4, Theorem~4.2 & Prior results cited:
+characterization and symmetric-output construction of Delgado, S\"uer and Ye\c{s}il. \\
+Section~5, p.~8, noninjectivity & Prior proof cited; Corollary~\ref{cor:fiber}
+identifies an entire infinite fiber. \\
+Section~5, p.~9, final paragraph: surjectivity & Answered: no
+(Theorem~\ref{thm:one}); half of the targets at each odd Frobenius number
+at least $3$ are excluded (Corollary~\ref{cor:half}). \\
+Section~5, pp.~8--9: how many outputs are semigroups? & Partial answer:
+all symmetric semigroups are attained (Corollary~\ref{cor:fixed});
+fixed-source bounds in Corollary~\ref{cor:source-bound}; no exact general count. \\
+Section~5, p.~9: image and plotted ratios & One full fiber is determined;
+the complete image and ratio asymptotics are not covered. \\
+Ye\c{s}il's earlier consecutive-PF construction \cite[Lemma~5.7]{Y} &
+Prior symmetric-output proof cited; the omission of $1$ also holds for this
+restricted construction, by Theorem~\ref{thm:one}. \\
+Fixed points and source-count bound & Not posed in the source;
+proved in Corollaries~\ref{cor:fixed} and~\ref{cor:source-bound}. \\
+Total symmetric-target count & Prior proof: Marzuola--Miller
+\cite[p.~12]{MM}; the image exclusion is proved in Corollary~\ref{cor:half}. \\
+\bottomrule
+\end{tabularx}
+\endgroup
+
+\paragraph{Formal statements and finite checks.}
+In the pinned \href{https://github.com/the-omega-institute/trureturing/blob/f960cb09514c99f42fd07398f5240a77378ea4db/D5/S3/Combinatorics/Partitions/DelgadoSuerYesilPhiRefutation.lean}{Lean source file},
+the declaration \texttt{phi\_omits\_one} states the universal obstruction for
+proper numerical semigroups, and \texttt{result} states the negation of
+unrestricted surjectivity, using the target with gaps $\{2,3\}$.
+The file's \texttt{deleteRows} and \texttt{phi} definitions implement
+\eqref{eq:gaps}; its \texttt{AlmostSymmetric} definition is additive closure
+together with $2g=F+t$. The namespace is
+\texttt{D5.S3.Combinatorics.Partitions.}\allowbreak
+\texttt{DelgadoSuerYesilPhiRefutation}.
+The proofs of all four corollaries are written above; they are separate
+from these two formal declarations.
+The accompanying \texttt{verify.py} uses exact integer and set operations to
+check the row-deletion identities, obstruction, ordinary fiber and fixed-point
+equivalence for every proper numerical semigroup with $1\leq F\leq18$,
+the fixed-source bound in that range, and all symmetric targets with odd
+$1\leq F\leq17$. The precise counts and Table~1 comparisons are supplied
+with the checker. These finite checks supplement the unbounded proofs.
+
+\begin{thebibliography}{9}
+\small
+\bibitem{DSY}
+M.~Delgado, M.~S\"uer and M.~Ye\c{s}il,
+\emph{A Symmetrization for Almost Symmetric Numerical Semigroups},
+arXiv:2611.14268v1 (2026),
+\href{https://arxiv.org/abs/2611.14268v1}{arxiv.org/abs/2611.14268v1}.
+
+\bibitem{KN}
+W.~J.~Keith and R.~Nath,
+\emph{Partitions with prescribed hooksets},
+J.~Combinatorics Number Theory \textbf{3} (2011), no.~1, 39--50.
+Author version: arXiv:1011.1945v2 (2010), Section~2, pp.~4--5,
+\href{https://arxiv.org/abs/1011.1945v2}{arxiv.org/abs/1011.1945v2}.
+
+\bibitem{Y}
+M.~Ye\c{s}il,
+\emph{Young Diagram Decompositions for Almost Symmetric Numerical Semigroups},
+Results Math.~\textbf{80} (2025), article~217,
+\href{https://doi.org/10.1007/s00025-025-02527-x}{doi:10.1007/s00025-025-02527-x}.
+Author version: arXiv:2504.20688v2 (2026), Lemma~5.7,
+\href{https://arxiv.org/abs/2504.20688v2}{arxiv.org/abs/2504.20688v2}.
+
+\bibitem{SY}
+M.~S\"uer and M.~Ye\c{s}il,
+\emph{Special subdiagrams of Young diagrams and numerical semigroups},
+Turkish J.~Math.~\textbf{48} (2024), no.~2, 346--359,
+\href{https://doi.org/10.55730/1300-0098.3510}{doi:10.55730/1300-0098.3510}.
+
+\bibitem{MM}
+J.~Marzuola and A.~Miller,
+\emph{Counting numerical sets with no small atoms}, arXiv:0805.3493v1 (2008),
+p.~12, section ``Symmetric numerical sets with no small atoms'',
+\href{https://arxiv.org/abs/0805.3493v1}{arxiv.org/abs/0805.3493v1}.
+\end{thebibliography}
+
+\smallskip
+\noindent\small\copyright\ 2026 Haobo Ma and Wenlin Zhang.
+Licensed under \href{https://creativecommons.org/licenses/by/4.0/}{Creative
+Commons Attribution 4.0 International (CC BY 4.0)}.
+\end{document}
