@@ -1,0 +1,133 @@
+{
+  "target_scope": "All symmetric numerical sets with Frobenius 1,3,...,23",
+  "diagonal_target_counts": {
+    "1": 1,
+    "3": 1,
+    "5": 2,
+    "7": 3,
+    "9": 6,
+    "11": 10,
+    "13": 20,
+    "15": 35,
+    "17": 70,
+    "19": 126,
+    "21": 252,
+    "23": 462
+  },
+  "attained_targets_through_frobenius_7": {
+    "1": [
+      [
+        0
+      ]
+    ],
+    "3": [
+      [
+        0,
+        2
+      ]
+    ],
+    "5": [
+      [
+        0,
+        3,
+        4
+      ],
+      [
+        0,
+        2,
+        4
+      ]
+    ],
+    "7": [
+      [
+        0,
+        4,
+        5,
+        6
+      ],
+      [
+        0,
+        2,
+        4,
+        6
+      ],
+      [
+        0,
+        3,
+        5,
+        6
+      ]
+    ]
+  },
+  "first_containing_two_obstruction": {
+    "frobenius": 9,
+    "elements": [
+      0,
+      2,
+      5,
+      6,
+      8
+    ]
+  },
+  "family_parameters_checked": {
+    "h_min": 5,
+    "h_max": 100
+  },
+  "source_maximum_frobenius": 18,
+  "source_membership_masks": 262143,
+  "numerical_semigroups": 1654,
+  "almost_symmetric_sources": 367,
+  "semigroups_by_source_frobenius": {
+    "1": 1,
+    "2": 1,
+    "3": 2,
+    "4": 2,
+    "5": 5,
+    "6": 4,
+    "7": 11,
+    "8": 10,
+    "9": 21,
+    "10": 22,
+    "11": 51,
+    "12": 40,
+    "13": 106,
+    "14": 103,
+    "15": 200,
+    "16": 205,
+    "17": 465,
+    "18": 405
+  },
+  "witness": {
+    "elements_below_conductor": [
+      0,
+      2,
+      5,
+      6,
+      8
+    ],
+    "gaps": [
+      1,
+      3,
+      4,
+      7,
+      9
+    ],
+    "boundary_word": "ENENNEENEN",
+    "column_bottom_heights": [
+      0,
+      1,
+      3,
+      3,
+      4
+    ],
+    "row_lengths_bottom_to_top": [
+      1,
+      2,
+      2,
+      4,
+      5
+    ],
+    "full_cells_strictly_below_diagonal": []
+  },
+  "scope": "Finite checks supplement the written proofs for all source semigroups and every family parameter h>=5."
+}

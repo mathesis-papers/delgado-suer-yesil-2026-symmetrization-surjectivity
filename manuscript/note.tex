@@ -1,33 +1,52 @@
-\documentclass[11pt]{article}
-\usepackage[a4paper,margin=27mm]{geometry}
+\documentclass[11pt,a4paper]{article}
 \usepackage[T1]{fontenc}
-\usepackage{amsmath,amssymb,amsthm,booktabs,tabularx}
-\usepackage[colorlinks=true,linkcolor=blue,citecolor=blue,urlcolor=blue]{hyperref}
-\setlength{\emergencystretch}{2em}
+\usepackage{lmodern,amsmath,amssymb,amsthm,booktabs,array}
+\usepackage[margin=1in]{geometry}
+\usepackage[colorlinks=true,allcolors=blue]{hyperref}
+\usepackage{xurl}
+\hypersetup{pdftitle={Extensions of Ma--Zhang's negative answer to Delgado, S\"uer and Ye\c{s}il's symmetrization question},pdfauthor={Haobo Ma; Wenlin Zhang},pdfsubject={Numerical semigroups and row-deletion symmetrization; CC BY 4.0}}
+
 \newtheorem{theorem}{Theorem}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
+\theoremstyle{definition}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{conjecture}[theorem]{Conjecture}
+\newtheorem{example}[theorem]{Example}
+\theoremstyle{remark}
+\newtheorem{remark}[theorem]{Remark}
+
+\title{Extensions of Ma--Zhang's negative answer to Delgado, S\"uer and Ye\c{s}il's symmetrization question}
+\author{Haobo Ma\\\small ChronoAI Pte Ltd, Singapore
+\and Wenlin Zhang\\\small National University of Singapore;\\\small ChronoAI Pte Ltd, Singapore}
+\date{24 November 2026}
+
+
+\usepackage{tabularx}
+\usepackage{needspace}
+\setlength{\emergencystretch}{2em}
 \newcommand{\N}{\mathbb{N}_0}
 \newcommand{\PF}{\operatorname{PF}}
 \newcommand{\AS}{\mathcal{AS}}
-\title{A negative answer to Delgado, S\"uer and Ye\c{s}il's\protect\\symmetrization question}
-\author{Haobo Ma\thanks{ChronoAI Pte Ltd, Singapore.}
-\and Wenlin Zhang\thanks{National University of Singapore; ChronoAI Pte Ltd, Singapore.}}
-\date{19 November 2026}
-
+\newcommand{\im}{\operatorname{im}}
 \begin{document}
 \maketitle
 \begin{abstract}
-The surjectivity question in the final paragraph of Section~5, p.~9,
-of Delgado, S\"uer and Ye\c{s}il's \emph{A Symmetrization for Almost
-Symmetric Numerical Semigroups} (arXiv:2611.14268v1) has a negative answer:
-pseudo-Frobenius row deletion always leaves $1$ as a gap.
-The symmetric numerical set $\{0,1\}\cup\{n\in\N:n\geq4\}$ is therefore
-not in the image. In fact, at least half of all symmetric numerical sets
-with any prescribed odd Frobenius number at least $3$ are excluded.
-Every symmetric numerical semigroup, in contrast, is fixed by the map.
-We identify the entire fiber over the target with sole gap $1$ and obtain
-at most $2^{\lfloor(F+1)/2\rfloor-1}$ distinct images of sources with
-Frobenius number $F$.
+We extend Ma and Zhang's negative answer (2026, \cite[Section~2]{MZ}) to
+the surjectivity question in Delgado, S\"uer and Ye\c{s}il,
+\emph{A Symmetrization for Almost Symmetric Numerical Semigroups}
+(arXiv:2611.14268v1, Section~5, p.~9, final paragraph):
+the row-deletion map omits not only targets containing $1$, but also
+some reduced symmetric targets whose diagrams have no full cell below
+the diagonal.
+The ordered output elements satisfy $b_i\geq2i$; equality at $b_1=2$
+forces every element below the conductor to be even.
+The smallest excluded reduced target has Frobenius number $7$;
+under the full-cell restriction the minimum is $9$.
+We give infinite excluded families, retain the exact ordinary fiber and
+fixed-point characterization, and distinguish fixed-source image bounds
+from fixed-target counts.
 \end{abstract}
 
 \section{The question and the row-deletion map}
@@ -36,7 +55,7 @@ numerical semigroups to symmetric numerical sets \cite[Theorem~4.2]{DSY}.
 They ask whether $\Phi$ is surjective \cite[Section~5, p.~9, final paragraph]{DSY}.
 The distinction between a numerical set and a numerical semigroup is decisive:
 the former may contain $1$ without being all of $\N$, whereas the latter cannot.
-We show that the construction never produces such a target.
+The omission obstruction and its consequences were established in \cite[Section~2]{MZ}. We retain those arguments and give the prefix and full-cell obstructions below.
 An earlier construction of Ye\c{s}il treats almost symmetric semigroups whose
 nonmaximal pseudo-Frobenius numbers form a consecutive block
 \cite[Lemma~5.7]{Y}; the general construction in \cite[Theorem~4.2]{DSY}
@@ -60,6 +79,13 @@ For a proper numerical semigroup $S$, put
 It is \emph{almost symmetric} if $2g(S)=F(S)+t(S)$.
 A proper numerical set $U$ is \emph{symmetric} if exactly one of $a$ and
 $F(U)-a$ belongs to $U$ for every integer $0\leq a\leq F(U)$.
+It is \emph{reduced} when $1\notin U$, in the terminology of
+S\"uer and Ye\c{s}il \cite[Definition~3.4 and Proposition~3.5]{SY}.
+Their reduction deletes initial full-height columns from a Young diagram
+\cite[Definition~3.2]{SY}; Proposition~3.7 describes the corresponding
+shift of its numerical set. They prove that the first special subdiagram
+of a symmetric numerical set is again symmetric \cite[Proposition~4.1]{SY}.
+That operation differs from the row deletion considered here.
 
 The numerical-set/Young-diagram correspondence numbers boundary steps starting
 at $0$: a member gives a right step and a gap gives an up step
@@ -87,7 +113,11 @@ Since exactly $t(S)-1$ rows below the Frobenius row are deleted,
  F(\Phi(S))=F(S)-t(S)+1.
 \end{equation}
 On almost symmetric semigroups it is the original map, whose symmetric-output
-property is proved in \cite[Theorem~4.2]{DSY}.
+property is proved in \cite[Theorem~4.2]{DSY}. Conversely, if the extended
+output is symmetric, $2(g(S)-t(S)+1)=F(S)-t(S)+2$ forces
+$2g(S)=F(S)+t(S)$. Thus a symmetric target cannot acquire a preimage
+from a source that is not almost symmetric.
+All intervals below contain integers unless they describe cell coordinates.
 
 \section{The obstruction}
 \begin{theorem}\label{thm:one}
@@ -205,6 +235,287 @@ $1+\sum_{h=2}^{H}2^{h-2}=2^{H-1}$, also when $H=1$.
 Finally $O_{F+1}\in\AS_F$ has semigroup image $U_1$, proving the lower bound.
 \end{proof}
 
+\section{The prefix obstruction}
+Restricting the target to reduced symmetric numerical sets does not restore
+surjectivity. For numerical semigroups themselves, the square-diagram path
+is a Dyck path \cite[Theorem~4.3 in the arXiv version]{BM}; the equivalent
+gap and ballot conditions are also stated in
+\cite[Theorem~7.2 and Remark~7.3]{RR}.
+Here $\Phi(S)$ need not be a semigroup, so the output prefix inequality
+requires the retained-label argument below.
+\begin{theorem}\label{thm:bound}
+Let $S$ be a proper almost symmetric numerical semigroup and let
+$T=\Phi(S)$. Write $F(T)=2h-1$ and
+$T\cap[0,F(T)]=\{0=b_0<b_1<\cdots<b_{h-1}\}$.
+Then $b_i\geq2i$ for every $0\leq i<h$. Equivalently,
+\[
+ |T\cap[0,r]|\leq\lfloor r/2\rfloor+1
+ \qquad(0\leq r\leq F(T)).
+\]
+\end{theorem}
+\begin{proof}
+Deleting $t-1$ original labels below $F$ gives $F(T)=F-t+1$.
+Almost symmetry therefore gives
+$h=(F-t+2)/2=F+1-g=|S\cap[0,F]|$.
+Put $A=S\cap[0,F]=\{0=a_0<a_1<\cdots<a_{h-1}\}$.
+We first identify all retained labels. Closure under addition implies
+$F-A\subseteq G(S)$. For $a\in A\setminus\{0\}$,
+$(F-a)+a=F\notin S$, so $F-a\notin\PF(S)$.
+As $F\in\PF(S)$, it follows that
+$D\subseteq G(S)\setminus(F-A)$. Almost symmetry gives
+\[
+ |G(S)\setminus(F-A)|=g-(F+1-g)=t-1=|D|.
+\]
+Thus $D=G(S)\setminus(F-A)$, also the identity
+in~\cite[Proposition~3.2(3)]{DSY}; compare also the almost-symmetry
+identity in~\cite[proof of Proposition~2.9]{CKLOS}. The retained labels are exactly
+the disjoint union $R=A\sqcup(F-A)$.
+Deletion relabels a retained $u$ by its rank
+\[
+ c(u)=|\{v\in R:v<u\}|=u-|\{d\in D:d<u\}|.
+\]
+There are $2h$ retained labels and the last is the gap $F$.
+Hence $F(T)=2h-1$ and $b_i=c(a_i)$.
+Let $q_i=|\{a\in A:a+a_i>F\}|$. Exactly $i$ elements of $A$
+precede $a_i$, and exactly $q_i$ members of $F-A$ precede it. Therefore
+$b_i=i+q_i$. Translation by $a_i$ gives an injection
+\[
+ A\cap[0,F-a_i]\longrightarrow A\cap[a_i,F],\qquad
+ a\longmapsto a+a_i,
+\]
+since $S$ is closed under addition. The two sets have sizes $h-q_i$
+and $h-i$, respectively, so $q_i\geq i$ and $b_i\geq2i$.
+If $\ell=|T\cap[0,r]|$, then $2(\ell-1)\leq b_{\ell-1}\leq r$,
+giving the equivalent prefix bound. Conversely, applying that bound
+at $r=b_i$ yields $b_i\geq2i$.
+\end{proof}
+
+\begin{corollary}\label{cor:example}
+The reduced symmetric numerical set
+$T_* = \{0,2,3,6\}\cup\{8,9,\ldots\}$ is not in the image of $\Phi$.
+Its Frobenius number $7$ is minimal for such a counterexample.
+\end{corollary}
+\begin{proof}
+Its gaps are $\{1,4,5,7\}$, and exactly one member of each pair
+$\{0,7\},\{1,6\},\{2,5\},\{3,4\}$ lies in $T_*$.
+It is reduced and symmetric, but $b_2=3<4$,
+contrary to Theorem~\ref{thm:bound}.
+Every proper symmetric numerical set has odd Frobenius number, since an even
+Frobenius number would pair its midpoint with itself.
+For Frobenius numbers $1,3,5$, the reduced symmetric sets are respectively
+\[
+ \{0\}\cup[2,\infty),\qquad
+ \{0,2\}\cup[4,\infty),\qquad
+ \{0,2,4\}\cup[6,\infty),\quad
+ \{0,3,4\}\cup[6,\infty),
+\]
+where intervals denote integers. Each is a symmetric numerical semigroup.
+For a symmetric numerical semigroup $\PF(S)=\{F(S)\}$,
+so $D$ is empty and $\Phi(S)=S$.
+\end{proof}
+
+Taking $r=h-1$ in Theorem~\ref{thm:bound} shows that
+$k=|T\cap[1,h-1]|$ satisfies $2k+1\leq h$.
+For $h\geq2$, the reduced symmetric targets of Frobenius number $2h-1$
+are parametrized by their elements in $\{2,\ldots,h-1\}$,
+so there are $2^{h-2}$ targets. Theorem~\ref{thm:bound} excludes at least
+\[
+ \sum_{j=\lceil h/2\rceil}^{h-2}\binom{h-2}{j}
+\]
+of them, with an empty sum interpreted as zero.
+
+There are also excluded reduced symmetric targets with every least positive
+element $m\geq2$:
+\[
+ T_m=\{0\}\cup[m,2m-1]\cup[3m,4m-2]\cup[4m,\infty).
+\]
+The map $x\mapsto F(T_m)-x$, with $F(T_m)=4m-1$, exchanges $0$ with $4m-1$,
+$[1,m-1]$ with $[3m,4m-2]$, and $[m,2m-1]$ with $[2m,3m-1]$.
+Thus $T_m$ is symmetric and reduced. However,
+$|T_m\cap[0,2m-1]|=m+1$, whereas the prefix bound permits at most $m$.
+
+\section{Rigidity for targets containing \texorpdfstring{$2$}{2}}
+\begin{theorem}\label{thm:two}
+Let $T$ be a reduced symmetric numerical set with $2\in T$ and
+$F(T)=2h-1$. Then $T$ is in the image of $\Phi$ if and only if
+\[
+ T=\{0,2,4,\ldots,2h-2\}\cup[2h,\infty).
+\]
+\end{theorem}
+\begin{proof}
+The case $h=1$ is the single set $\{0\}\cup[2,\infty)$.
+Suppose $h\geq2$ and $T=\Phi(S)$, and use the notation of
+Theorem~\ref{thm:bound}. Put $\mu=a_1$. Since $b_1=2$, the identity
+$b_1=1+q_1$ gives $q_1=1$. Translation by $\mu$ is therefore a bijection
+\[
+ A\setminus\{\max A\}\longrightarrow A\setminus\{0\}.
+\]
+It preserves order, so $a_{i+1}=a_i+\mu$ and
+$A=\{0,\mu,\ldots,(h-1)\mu\}$.
+Now $(h-1)\mu<F<h\mu$: the first inequality holds because $F$ is a gap,
+and the second because $\max A+\mu\notin A$ and belongs to $S$.
+Write $F=(h-1)\mu+r$ with $1\leq r<\mu$.
+The retained elements and gaps occur as the successive pairs
+\[
+ (j\mu,\ j\mu+r),\qquad j=0,\ldots,h-1,
+\]
+in that order, since $0<r<\mu$.
+Thus every retained source element has an even rank, giving the displayed
+form of $T$. Conversely, this $T$ is the symmetric numerical semigroup
+$\langle2,2h+1\rangle$, so $\Phi(T)=T$.
+\end{proof}
+
+The prefix inequalities alone are not sufficient. The set
+$U=\{0,2,5,6,8\}\cup[10,\infty)$ is reduced and symmetric, and its
+elements below the conductor, $(0,2,5,6,8)$, satisfy $b_i\geq2i$.
+This symmetric numerical set already appears in~\cite[Example~5.3]{Y}.
+Here $2\in U$ and $4\notin U$, so Theorem~\ref{thm:two} establishes
+the additional conclusion that $U$ is outside the row-deletion image.
+
+
+\section{The full-cell restriction}\label{sec:cells}
+For a symmetric numerical set $T$, write $F(T)=2h-1$ and
+$T\cap[0,2h-1]=\{0=b_0<\cdots<b_{h-1}\}$.
+Use the Young diagram convention of Delgado, S\"uer and
+Ye\c{s}il~\cite[Section~2, p.~4]{DSY}: read $0,\ldots,F(T)$,
+taking an east step for an element and a north step for a gap.
+The diagram is the region above this path and below height $h$.
+We forbid a full cell below $y=x$ when its entire interior is in $y<x$;
+cells bisected by the diagonal are allowed. A cell touching the diagonal
+at its northwest corner, with all its interior below, is forbidden.
+
+\begin{lemma}\label{lem:cells}
+The full-cell condition is equivalent to $b_i\geq2i$ for every $i$.
+\end{lemma}
+\begin{proof}
+The east step labelled $b_i$ starts at $(i,b_i-i)$.
+Column $i$ therefore contains precisely the cells
+$[i,i+1]\times[j,j+1]$ with $b_i-i\leq j\leq h-1$.
+Such a cell has its entire interior below $y=x$ exactly when $j+1\leq i$.
+There is no such cell in any column if and only if $b_i-i\geq i$.
+\end{proof}
+This is not the condition that the boundary path itself stays above $y=x$:
+its initial east step is allowed. Numerical-semigroup boundary paths and
+their gap inequalities are classical~\cite[Theorem~4.3]{BM}; here the
+condition is imposed on the symmetric output set, which need not be closed
+under addition.
+
+\Needspace{11\baselineskip}
+\section{Excluded targets on the square board}
+\begin{theorem}\label{thm:diagonal}
+The reduced symmetric numerical set
+\[
+ U=\{0,2,5,6,8\}\cup[10,\infty)
+\]
+satisfies the full-cell condition but has no almost symmetric numerical
+semigroup preimage. With the convention in Section~\ref{sec:cells}, $9$ is the smallest
+Frobenius number of such an excluded target. For every $h\geq5$,
+\[
+ U_h=\{0,2\}\cup\bigl([h,2h-2]\setminus\{2h-3\}\bigr)\cup[2h,\infty)
+\]
+gives a family of such targets with Frobenius number $2h-1$, with $U_5=U$.
+\end{theorem}
+\begin{proof}
+For $U$, the complementary pairs are $\{0,9\}$, $\{1,8\}$,
+$\{2,7\}$, $\{3,6\}$ and $\{4,5\}$; each contains exactly one element
+of $U$. Its elements $(0,2,5,6,8)$ satisfy $b_i\geq2i$.
+Yet $2\in U$ and $4\notin U$, contradicting Theorem~\ref{thm:two}
+if $U$ were an image. The numerical set itself is depicted by
+Bras-Amor\'os and de Mier~\cite[Remark~2.5]{BM} and appears explicitly
+in Ye\c{s}il~\cite[Example~5.3]{Y}; the point here is its exclusion
+despite the diagonal restriction.
+
+For $U_h$, the low labels $0,2$ are paired with the omitted high labels
+$2h-1,2h-3$. Each other low label in $[0,h-1]$ is omitted and has its
+complement in the displayed high interval. Thus $U_h$ is symmetric,
+reduced, and has Frobenius number $2h-1$. Its ordered elements below the
+conductor are
+\[
+ b_0=0,\quad b_1=2,\quad
+ b_i=h+i-2\ (2\leq i\leq h-2),\quad b_{h-1}=2h-2.
+\]
+These satisfy $b_i\geq2i$, while $2\in U_h$ and $4\notin U_h$.
+The same rigidity argument excludes it.
+
+For minimality, symmetry and $b_i\geq2i$ give exactly the following lists
+below the conductor when $h\leq4$. They follow by choosing one member
+of each pair $\{j,2h-1-j\}$, retaining $0$, and imposing the inequalities.
+\begin{center}
+\begin{tabular}{cl}
+\toprule
+$F(T)$ & Possible $T\cap[0,F(T)]$\\
+\midrule
+1 & $\{0\}$\\
+3 & $\{0,2\}$\\
+5 & $\{0,2,4\}$, $\{0,3,4\}$\\
+7 & $\{0,2,4,6\}$, $\{0,3,5,6\}$, $\{0,4,5,6\}$\\
+\bottomrule
+\end{tabular}
+\end{center}
+Each completed set is closed under addition, hence is a symmetric
+numerical semigroup fixed by $\Phi$. This proves the minimality assertion.
+\end{proof}
+
+\begin{figure}[ht]
+\centering
+\setlength{\unitlength}{6mm}
+\begin{picture}(7,5.6)
+\put(0,0){\framebox(1,1){}}
+\multiput(0,1)(1,0){2}{\framebox(1,1){}}
+\multiput(0,2)(1,0){2}{\framebox(1,1){}}
+\multiput(0,3)(1,0){4}{\framebox(1,1){}}
+\multiput(0,4)(1,0){5}{\framebox(1,1){}}
+\linethickness{0.8pt}\put(0,0){\line(1,1){5}}
+\put(5.2,4.9){\makebox(0,0)[l]{$y=x$}}
+\put(0,-0.45){\makebox(0,0){$0$}}
+\put(5,-0.45){\makebox(0,0){$5$}}
+\end{picture}
+\caption{The diagram of $U$, with row lengths $1,2,2,4,5$ from bottom
+to top. The diagonal may bisect a cell; no full cell lies below it.}
+\end{figure}
+
+The exclusion and family statements have written proofs for every source
+and every $h\geq5$. The accompanying \texttt{verify\_diagonal.py} checks all symmetric
+targets through Frobenius number $23$, the family for $5\leq h\leq100$,
+and all numerical-semigroup sources through Frobenius number $18$.
+
+
+\section{Finite verification}
+The accompanying program \texttt{verify\_prefix.py} enumerates all $840\,170$ proper
+numerical semigroups with $F(S)\leq35$. Among them $17\,842$ are
+almost symmetric. For each it computes $\PF(S)$ from its defining
+condition, deletes the original rows, and checks symmetry and
+Theorems~\ref{thm:bound} and~\ref{thm:two}. None has image $T_*$.
+The image counts below are unions over this bounded \emph{source}
+range, grouped by \emph{output} Frobenius number; they are not counts
+for sources of one fixed Frobenius number.
+\begin{center}
+\setlength{\tabcolsep}{3pt}
+\begin{tabular}{lrrrrrrrrrrr}
+\toprule
+$F(T)$&1&3&5&7&9&11&13&15&17&19&21\\
+Reduced targets&1&1&2&4&8&16&32&64&128&256&512\\
+Attained, $F(S)\leq35$&1&1&2&3&4&7&9&12&18&25&32\\
+\bottomrule
+\end{tabular}
+\end{center}
+To see completeness of the enumeration, adjoining the Frobenius gap
+of any proper numerical semigroup gives its unique parent semigroup.
+Conversely, a child removes a minimal positive generator larger than
+the parent's Frobenius number. For parent multiplicity $m$, all such
+generators are at most $F+m$: a larger integer $x$ decomposes as
+$m+(x-m)$, with $x-m>F$. Starting at $\N\setminus\{1\}$ and keeping
+removals at most $35$ therefore visits every proper source in the range,
+exactly once. For a removed label $x$, minimality is tested by all
+decompositions $x=a+(x-a)$ with $1\leq a\leq x/2$.
+
+For the row-deletion formula extended to any proper numerical semigroup,
+the output has genus $g-t+1$ and Frobenius number $F-t+1$.
+If that output is symmetric, their relation forces $2g=F+t$.
+Thus a non-almost-symmetric source cannot produce $T_*$ either.
+Theorems~\ref{thm:bound} and~\ref{thm:two}, and Corollary~\ref{cor:example}, have written
+proofs for all parameters; the enumeration is finite supporting evidence.
+
 \section{Relation to the neighboring questions}
 The fixed-source bound concerns the paper's $\mathcal S_F$, not all targets
 of a fixed output Frobenius number. The exact ordinary fiber strengthens
@@ -228,7 +539,7 @@ Section~5, pp.~8--9: how many outputs are semigroups? & Partial answer:
 all symmetric semigroups are attained (Corollary~\ref{cor:fixed});
 fixed-source bounds in Corollary~\ref{cor:source-bound}; no exact general count. \\
 Section~5, p.~9: image and plotted ratios & One full fiber is determined;
-the complete image and ratio asymptotics are not covered. \\
+the prefix and full-cell conditions are necessary, not sufficient (Theorems~\ref{thm:bound} and~\ref{thm:diagonal}); the complete image and ratio asymptotics are not covered. \\
 Ye\c{s}il's earlier consecutive-PF construction \cite[Lemma~5.7]{Y} &
 Prior symmetric-output proof cited; the omission of $1$ also holds for this
 restricted construction, by Theorem~\ref{thm:one}. \\
@@ -236,6 +547,11 @@ Fixed points and source-count bound & Not posed in the source;
 proved in Corollaries~\ref{cor:fixed} and~\ref{cor:source-bound}. \\
 Total symmetric-target count & Prior proof: Marzuola--Miller
 \cite[p.~12]{MM}; the image exclusion is proved in Corollary~\ref{cor:half}. \\
+Reduced targets and the diagonal restriction &
+Corollary~\ref{cor:example} gives the minimal reduced nonimage;
+Theorem~\ref{thm:two} characterizes images containing $2$;
+Lemma~\ref{lem:cells} identifies the full-cell convention and
+Theorem~\ref{thm:diagonal} gives the minimal full-cell nonimage and a family. \\
 \bottomrule
 \end{tabularx}
 \endgroup
@@ -250,14 +566,23 @@ The file's \texttt{deleteRows} and \texttt{phi} definitions implement
 together with $2g=F+t$. The namespace is
 \texttt{D5.S3.Combinatorics.Partitions.}\allowbreak
 \texttt{DelgadoSuerYesilPhiRefutation}.
-The proofs of all four corollaries are written above; they are separate
-from these two formal declarations.
-The accompanying \texttt{verify.py} uses exact integer and set operations to
+The four corollaries in Section~2, the prefix and rigidity theorems,
+the full-cell equivalence and the two minimality and family arguments
+have written proofs above; they are separate from these two formal declarations.
+The accompanying \texttt{verify\_base.py} uses exact integer and set operations to
 check the row-deletion identities, obstruction, ordinary fiber and fixed-point
 equivalence for every proper numerical semigroup with $1\leq F\leq18$,
 the fixed-source bound in that range, and all symmetric targets with odd
 $1\leq F\leq17$. The precise counts and Table~1 comparisons are supplied
 with the checker. These finite checks supplement the unbounded proofs.
+
+
+The independent membership-mask implementation
+\texttt{verify\_independent.py} checks the prefix and rigidity assertions
+through source Frobenius number $16$ and agrees with the semigroup-tree
+counts throughout that range. The full-cell equivalence, small-target lists
+and excluded family are also checked by \texttt{verify\_diagonal.py} in
+the ranges stated above.
 
 \begin{thebibliography}{9}
 \small
@@ -293,10 +618,35 @@ J.~Marzuola and A.~Miller,
 \emph{Counting numerical sets with no small atoms}, arXiv:0805.3493v1 (2008),
 p.~12, section ``Symmetric numerical sets with no small atoms'',
 \href{https://arxiv.org/abs/0805.3493v1}{arxiv.org/abs/0805.3493v1}.
+
+\bibitem{BM}
+M.~Bras-Amor\'os and A.~de Mier,
+\emph{Representation of Numerical Semigroups by Dyck Paths},
+Semigroup Forum \textbf{75} (2007), 676--681.
+\url{https://doi.org/10.1007/s00233-007-0717-7}.
+Theorem~4.3 in the preprint version:
+\url{https://arxiv.org/abs/math/0612634v1}.
+
+\bibitem{RR}
+R.~Raja and Z.~Rashid,
+\emph{Creation Sequences for Numerical Semigroups and Exact Counts of
+Semigroup Partitions}, arXiv:2611.20832v1 (2026), Theorem~7.2 and Remark~7.3.
+\url{https://arxiv.org/abs/2611.20832v1}.
+
+\bibitem{CKLOS}
+A.~Chen, N.~Kaplan, L.~Lawson, C.~O'Neill and D.~Singhal,
+\emph{Enumerating numerical sets associated to a numerical semigroup},
+arXiv:2211.17090v2 (2023), Proposition~2.9.
+\url{https://arxiv.org/abs/2211.17090v2}.
+
+\bibitem{MZ}
+H.~Ma and W.~Zhang,
+\emph{A negative answer to Delgado, S\"uer and Ye\c{s}il's symmetrization question},
+revision~2 (2026), Section~2.
+\url{https://doi.org/10.5281/zenodo.24391331}.
 \end{thebibliography}
 
 \smallskip
-\noindent\small\copyright\ 2026 Haobo Ma and Wenlin Zhang.
-Licensed under \href{https://creativecommons.org/licenses/by/4.0/}{Creative
-Commons Attribution 4.0 International (CC BY 4.0)}.
+\noindent\small Copyright \copyright\ 2026 Haobo Ma and Wenlin Zhang.
+Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).
 \end{document}

@@ -1,15 +1,15 @@
 {
   "id": "delgado-suer-yesil-2026-symmetrization-surjectivity",
-  "revision": 2,
+  "revision": 4,
   "problem_ids": ["delgado-suer-yesil-2026-symmetrization-surjectivity"],
-  "topic": "Failure of unrestricted surjectivity for pseudo-Frobenius row-deletion symmetrization",
-  "title": "A negative answer to Delgado, Süer and Yeşil's symmetrization question",
+  "topic": "Obstructions to unrestricted, reduced and full-cell surjectivity of pseudo-Frobenius row deletion",
+  "title": "Extensions of Ma–Zhang's negative answer to Delgado, Süer and Yeşil's symmetrization question",
   "creators": [
     {"name": "Haobo Ma", "affiliation": "ChronoAI Pte Ltd, Singapore"},
     {"name": "Wenlin Zhang", "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore"}
   ],
-  "abstract": "The surjectivity question in the final paragraph of Section 5, p. 9, of Delgado, Süer and Yeşil's A Symmetrization for Almost Symmetric Numerical Semigroups (arXiv:2611.14268v1) has a negative answer: pseudo-Frobenius row deletion always leaves 1 as a gap. The symmetric numerical set {0,1} union {n >= 4} is therefore not in the image. In fact, at least half of all symmetric numerical sets with any prescribed odd Frobenius number at least 3 are excluded. Every symmetric numerical semigroup, in contrast, is fixed by the map. We identify the entire fiber over the target with sole gap 1 and obtain at most 2^(floor((F+1)/2)-1) distinct images of sources with Frobenius number F.",
-  "summary": "Pseudo-Frobenius row deletion on every proper numerical semigroup omits 1, excluding the symmetric target with gaps {2,3} and half the targets at every odd Frobenius number at least 3. The symmetric numerical semigroups are exactly the fixed points among semigroups. The fiber over the target with sole gap 1 consists exactly of the ordinary semigroups, one per positive source Frobenius number. For fixed source Frobenius F, the number of distinct images is at most 2^(floor((F+1)/2)-1). The target-count ingredient is credited to Marzuola–Miller, and the reduced-diagram correspondence to Süer–Yeşil. Exact finite checks cover all 1,654 proper numerical semigroups with Frobenius number at most 18, including 367 almost symmetric sources, and reproduce the first 18 rows of the posing paper's Table 1.",
+  "abstract": "We extend Ma and Zhang's negative answer (2026, DOI 10.5281/zenodo.24391331, Section 2) to the surjectivity question in Delgado, Süer and Yeşil, A Symmetrization for Almost Symmetric Numerical Semigroups (arXiv:2611.14268v1, Section 5, p. 9, final paragraph): the row-deletion map omits not only targets containing 1, but also some reduced symmetric targets whose diagrams have no full cell below the diagonal. The ordered output elements satisfy b_i >= 2i; equality at b_1 = 2 forces every element below the conductor to be even. The smallest excluded reduced target has Frobenius number 7; under the full-cell restriction the minimum is 9. We give infinite excluded families, retain the exact ordinary fiber and fixed-point characterization, and distinguish fixed-source image bounds from fixed-target counts.",
+  "summary": "Every proper numerical-semigroup row-deletion output omits 1. For almost symmetric sources, output elements satisfy b_i >= 2i, and targets containing 2 are attained precisely when their elements below the conductor are all even. The minimal excluded reduced symmetric target has Frobenius 7; imposing the full-cell condition raises that minimum to 9 but does not restore surjectivity. Written proofs include both infinite excluded families, the binomial exclusion bound, the exact ordinary fiber, symmetric-semigroup fixed points and the fixed-source image bound. Prior target counting, diagram facts and examples are attributed to their sources. Exact finite checks retain their specified source and target ranges.",
   "license": "cc-by-4.0",
   "evidence_url": "https://github.com/the-omega-institute/trureturing/blob/f960cb09514c99f42fd07398f5240a77378ea4db/D5/S3/Combinatorics/Partitions/DelgadoSuerYesilPhiRefutation.lean"
 }

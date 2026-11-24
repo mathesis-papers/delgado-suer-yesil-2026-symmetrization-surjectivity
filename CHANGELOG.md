@@ -1,4 +1,4 @@
 # Changelog
 
-- Version 2: public Mathesis snapshot at 2026-11-20T08:02:23.315589437Z.
+- Version 4: public Mathesis snapshot at 2026-11-24T16:36:11.142798458Z.
 - Formalization events are represented by exact-version nodes in `formalization/nodes.json`.

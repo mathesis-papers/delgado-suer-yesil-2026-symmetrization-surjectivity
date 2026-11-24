@@ -1,0 +1,287 @@
+{
+  "almost_symmetric_checked": 367,
+  "arithmetic": "exact integers and finite sets; no floating-point operations",
+  "checks": "pass",
+  "counterexample": {
+    "contains_one": true,
+    "frobenius": 3,
+    "gaps": [
+      2,
+      3
+    ],
+    "semigroup": false,
+    "symmetric": true
+  },
+  "existing_collision": {
+    "image_gaps": [
+      1,
+      2,
+      5
+    ],
+    "source_gap_sets": [
+      [
+        1,
+        2,
+        3,
+        5,
+        7
+      ],
+      [
+        1,
+        2,
+        3,
+        4,
+        7
+      ]
+    ]
+  },
+  "finite_reduction": "A sum or pseudo-Frobenius test exceeding the largest gap automatically belongs to the numerical set.",
+  "numerical_semigroups_checked": 1654,
+  "scope": {
+    "source_frobenius_max": 18,
+    "source_frobenius_min": 1,
+    "target_frobenius_values": [
+      1,
+      3,
+      5,
+      7,
+      9,
+      11,
+      13,
+      15,
+      17
+    ]
+  },
+  "source_completeness": "Every proper numerical semigroup has gap 1; all remaining gap subsets below the fixed Frobenius number are enumerated.",
+  "source_table_comparison": "All three columns of Table 1, rows F=1 through F=18, agree.",
+  "sources": [
+    {
+      "almost_symmetric": 1,
+      "distinct_images": 1,
+      "image_upper_bound": 1,
+      "numerical_semigroups": 1,
+      "ordinary_sources": 1,
+      "semigroup_images": 1,
+      "source_frobenius": 1,
+      "symmetric_fixed_points": 1
+    },
+    {
+      "almost_symmetric": 1,
+      "distinct_images": 1,
+      "image_upper_bound": 1,
+      "numerical_semigroups": 1,
+      "ordinary_sources": 1,
+      "semigroup_images": 1,
+      "source_frobenius": 2,
+      "symmetric_fixed_points": 0
+    },
+    {
+      "almost_symmetric": 2,
+      "distinct_images": 2,
+      "image_upper_bound": 2,
+      "numerical_semigroups": 2,
+      "ordinary_sources": 1,
+      "semigroup_images": 2,
+      "source_frobenius": 3,
+      "symmetric_fixed_points": 1
+    },
+    {
+      "almost_symmetric": 2,
+      "distinct_images": 2,
+      "image_upper_bound": 2,
+      "numerical_semigroups": 2,
+      "ordinary_sources": 1,
+      "semigroup_images": 2,
+      "source_frobenius": 4,
+      "symmetric_fixed_points": 0
+    },
+    {
+      "almost_symmetric": 4,
+      "distinct_images": 4,
+      "image_upper_bound": 4,
+      "numerical_semigroups": 5,
+      "ordinary_sources": 1,
+      "semigroup_images": 4,
+      "source_frobenius": 5,
+      "symmetric_fixed_points": 2
+    },
+    {
+      "almost_symmetric": 3,
+      "distinct_images": 3,
+      "image_upper_bound": 4,
+      "numerical_semigroups": 4,
+      "ordinary_sources": 1,
+      "semigroup_images": 3,
+      "source_frobenius": 6,
+      "symmetric_fixed_points": 0
+    },
+    {
+      "almost_symmetric": 7,
+      "distinct_images": 6,
+      "image_upper_bound": 8,
+      "numerical_semigroups": 11,
+      "ordinary_sources": 1,
+      "semigroup_images": 6,
+      "source_frobenius": 7,
+      "symmetric_fixed_points": 3
+    },
+    {
+      "almost_symmetric": 6,
+      "distinct_images": 5,
+      "image_upper_bound": 8,
+      "numerical_semigroups": 10,
+      "ordinary_sources": 1,
+      "semigroup_images": 5,
+      "source_frobenius": 8,
+      "symmetric_fixed_points": 0
+    },
+    {
+      "almost_symmetric": 11,
+      "distinct_images": 8,
+      "image_upper_bound": 16,
+      "numerical_semigroups": 21,
+      "ordinary_sources": 1,
+      "semigroup_images": 8,
+      "source_frobenius": 9,
+      "symmetric_fixed_points": 3
+    },
+    {
+      "almost_symmetric": 9,
+      "distinct_images": 7,
+      "image_upper_bound": 16,
+      "numerical_semigroups": 22,
+      "ordinary_sources": 1,
+      "semigroup_images": 6,
+      "source_frobenius": 10,
+      "symmetric_fixed_points": 0
+    },
+    {
+      "almost_symmetric": 20,
+      "distinct_images": 13,
+      "image_upper_bound": 32,
+      "numerical_semigroups": 51,
+      "ordinary_sources": 1,
+      "semigroup_images": 12,
+      "source_frobenius": 11,
+      "symmetric_fixed_points": 6
+    },
+    {
+      "almost_symmetric": 15,
+      "distinct_images": 8,
+      "image_upper_bound": 32,
+      "numerical_semigroups": 40,
+      "ordinary_sources": 1,
+      "semigroup_images": 8,
+      "source_frobenius": 12,
+      "symmetric_fixed_points": 0
+    },
+    {
+      "almost_symmetric": 32,
+      "distinct_images": 18,
+      "image_upper_bound": 64,
+      "numerical_semigroups": 106,
+      "ordinary_sources": 1,
+      "semigroup_images": 17,
+      "source_frobenius": 13,
+      "symmetric_fixed_points": 8
+    },
+    {
+      "almost_symmetric": 24,
+      "distinct_images": 13,
+      "image_upper_bound": 64,
+      "numerical_semigroups": 103,
+      "ordinary_sources": 1,
+      "semigroup_images": 13,
+      "source_frobenius": 14,
+      "symmetric_fixed_points": 0
+    },
+    {
+      "almost_symmetric": 47,
+      "distinct_images": 21,
+      "image_upper_bound": 128,
+      "numerical_semigroups": 200,
+      "ordinary_sources": 1,
+      "semigroup_images": 20,
+      "source_frobenius": 15,
+      "symmetric_fixed_points": 7
+    },
+    {
+      "almost_symmetric": 42,
+      "distinct_images": 18,
+      "image_upper_bound": 128,
+      "numerical_semigroups": 205,
+      "ordinary_sources": 1,
+      "semigroup_images": 15,
+      "source_frobenius": 16,
+      "symmetric_fixed_points": 0
+    },
+    {
+      "almost_symmetric": 83,
+      "distinct_images": 34,
+      "image_upper_bound": 256,
+      "numerical_semigroups": 465,
+      "ordinary_sources": 1,
+      "semigroup_images": 30,
+      "source_frobenius": 17,
+      "symmetric_fixed_points": 15
+    },
+    {
+      "almost_symmetric": 58,
+      "distinct_images": 21,
+      "image_upper_bound": 256,
+      "numerical_semigroups": 405,
+      "ordinary_sources": 1,
+      "semigroup_images": 19,
+      "source_frobenius": 18,
+      "symmetric_fixed_points": 0
+    }
+  ],
+  "targets": [
+    {
+      "symmetric_numerical_sets": 1,
+      "target_frobenius": 1,
+      "targets_containing_one": 0
+    },
+    {
+      "symmetric_numerical_sets": 2,
+      "target_frobenius": 3,
+      "targets_containing_one": 1
+    },
+    {
+      "symmetric_numerical_sets": 4,
+      "target_frobenius": 5,
+      "targets_containing_one": 2
+    },
+    {
+      "symmetric_numerical_sets": 8,
+      "target_frobenius": 7,
+      "targets_containing_one": 4
+    },
+    {
+      "symmetric_numerical_sets": 16,
+      "target_frobenius": 9,
+      "targets_containing_one": 8
+    },
+    {
+      "symmetric_numerical_sets": 32,
+      "target_frobenius": 11,
+      "targets_containing_one": 16
+    },
+    {
+      "symmetric_numerical_sets": 64,
+      "target_frobenius": 13,
+      "targets_containing_one": 32
+    },
+    {
+      "symmetric_numerical_sets": 128,
+      "target_frobenius": 15,
+      "targets_containing_one": 64
+    },
+    {
+      "symmetric_numerical_sets": 256,
+      "target_frobenius": 17,
+      "targets_containing_one": 128
+    }
+  ],
+  "unbounded_statements": "The universal obstruction, target count, fixed-point characterization, ordinary fiber and fixed-source bound have written proofs in note.pdf."
+}

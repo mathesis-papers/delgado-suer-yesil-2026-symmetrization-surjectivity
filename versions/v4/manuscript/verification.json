@@ -1,0 +1,26 @@
+{
+  "status": "pass",
+  "arithmetic": "exact integers and finite sets",
+  "outputs": [
+    {
+      "name": "base-verification.json",
+      "bytes": 7039,
+      "sha256": "fe503a15f32d4caa824ab878cb815ca85b50b5d2046e91e668862aff4405b247"
+    },
+    {
+      "name": "prefix-verification.json",
+      "bytes": 9795,
+      "sha256": "2c9319cba6e80ac28f17cffe0297cb6695e08c762f37214ba601a6d20d7cd896"
+    },
+    {
+      "name": "independent-verification.json",
+      "bytes": 916,
+      "sha256": "55377508bae480f68ca75530a45bb67a582f4a1c199cf63fd07f7aa353dd7227"
+    },
+    {
+      "name": "diagonal-verification.json",
+      "bytes": 1895,
+      "sha256": "436882f0900b55d4f163eca74f9486b32baee3f94816cba63ee2b3e05766cdf6"
+    }
+  ]
+}
