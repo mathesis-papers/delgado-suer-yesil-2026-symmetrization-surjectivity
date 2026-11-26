@@ -1,0 +1,23 @@
+{
+  "id": "delgado-suer-yesil-2026-symmetrization-surjectivity",
+  "revision": 5,
+  "problem_ids": [
+    "delgado-suer-yesil-2026-symmetrization-surjectivity"
+  ],
+  "topic": "Obstructions to unrestricted, reduced and full-cell surjectivity of pseudo-Frobenius row deletion; exact images at multiplicity three and a general source cutoff",
+  "title": "Extensions of Ma–Zhang's negative answer to Delgado, Süer and Yeşil's symmetrization question",
+  "creators": [
+    {
+      "name": "Haobo Ma",
+      "affiliation": "ChronoAI Pte Ltd, Singapore"
+    },
+    {
+      "name": "Wenlin Zhang",
+      "affiliation": "National University of Singapore; ChronoAI Pte Ltd, Singapore"
+    }
+  ],
+  "abstract": "We extend Ma and Zhang's negative answer (2026, DOI 10.5281/zenodo.24391331, Section 2) to the surjectivity question in Delgado, Süer and Yeşil, A Symmetrization for Almost Symmetric Numerical Semigroups (arXiv:2611.14268v1, Section 5, p. 9, final paragraph): the row-deletion map omits not only targets containing 1, but also some reduced symmetric targets whose diagrams have no full cell below the diagonal. The ordered output elements satisfy b_i >= 2i; equality at b_1 = 2 forces every element below the conductor to be even. The smallest excluded reduced target has Frobenius number 7; under the full-cell restriction the minimum is 9. We give infinite excluded families, retain the exact ordinary fiber and fixed-point characterization, and distinguish fixed-source image bounds from fixed-target counts. For symmetric targets of multiplicity three and Frobenius number 2h−1, there is one image for h=3,4,5 and exactly two for every h≥6. At arbitrary output multiplicity r<h, every source has multiplicity at most 2r−2 and Frobenius number at most 2h+2r−5.",
+  "summary": "Every proper numerical-semigroup row-deletion output omits 1. For almost symmetric sources, output elements satisfy b_i >= 2i, and targets containing 2 are attained precisely when their elements below the conductor are all even. The minimal excluded reduced symmetric target has Frobenius 7; imposing the full-cell condition raises that minimum to 9 but does not restore surjectivity. Written proofs include both infinite excluded families, the binomial exclusion bound, the exact ordinary fiber, symmetric-semigroup fixed points and the fixed-source image bound. Prior target counting, diagram facts and examples are attributed to their sources. Exact finite checks retain their specified source and target ranges. The multiplicity-three classification has two explicit families, which coincide exactly for h=3,4,5. A proved source cutoff yields a finite membership test for every symmetric target.",
+  "license": "cc-by-4.0",
+  "evidence_url": "https://github.com/the-omega-institute/trureturing/blob/f960cb09514c99f42fd07398f5240a77378ea4db/D5/S3/Combinatorics/Partitions/DelgadoSuerYesilPhiRefutation.lean"
+}

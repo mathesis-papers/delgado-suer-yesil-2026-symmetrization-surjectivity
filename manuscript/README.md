@@ -4,7 +4,7 @@ Haobo Ma — ChronoAI Pte Ltd, Singapore.
 Wenlin Zhang — National University of Singapore; ChronoAI Pte Ltd, Singapore.
 
 Stable note ID: `delgado-suer-yesil-2026-symmetrization-surjectivity`.  
-Revision 4, 24 November 2026. License: CC BY 4.0.
+Revision 5, 25 November 2026. License: CC BY 4.0.
 
 ## Mathematical coverage
 
@@ -22,6 +22,9 @@ Remark 2.5; the same numerical set appears explicitly in Yeşil, Example 5.3.
 The total symmetric-target count is attributed to Marzuola and Miller.
 The omission obstruction and Corollaries 2–5 are also in the earlier note,
 revision 2, DOI `10.5281/zenodo.24391331`.
+
+- Section 7 characterizes multiplicity-three targets: the two explicit families coincide for `h = 3, 4, 5` and differ for every `h >= 6`, at output Frobenius `2h - 1`. It also gives a least-Frobenius multiplicity-three nonimage satisfying the prefix bound.
+- For output multiplicity `r` and Frobenius `2h - 1` with `h > r`, every source has multiplicity at most `2r - 2` and Frobenius in `[2h - 1, 2h + 2r - 5]`. The boundary targets are handled separately, giving an exact finite membership test without claiming a closed classification at higher multiplicity.
 
 ## Build the manuscript
 
@@ -41,9 +44,10 @@ Python 3 and its standard library suffice:
 
 ```sh
 python3 verify.py
+python3 verify_multiplicity3.py --output multiplicity3_checks.rerun.json
 ```
 
-The command produces all four detailed JSON outputs and `verification.json`.
+The first command produces four detailed JSON outputs and `verification.json`. The file from the second command can be compared with `multiplicity3_checks.json`.
 The programs use exact finite sets, integer bit masks and integer arithmetic.
 
 | Program | Complete finite domain | Main checks |
@@ -53,11 +57,13 @@ The programs use exact finite sets, integer bit masks and integer arithmetic.
 | `verify_independent.py` | All 65,535 membership masks through source Frobenius 16; 784 numerical semigroups, including 226 almost symmetric sources | Direct closure and pseudo-Frobenius tests, symmetry iff almost symmetry, prefix inequality and rigidity |
 | `verify_diagonal.py` | All 4,095 symmetric targets with odd Frobenius 1–23; family parameters 5–100; all numerical-semigroup sources through Frobenius 18 | Full-cell/prefix equivalence, complete small-target lists, the excluded family and source-image assertions |
 
+| `verify_multiplicity3.py` | All 840,170 proper sources through Frobenius 35; separate subset enumeration through 18; constructions for 3 ≤ h ≤ 100 | Exact cutoff and multiplicity-three checks; completeness for multiplicity-three targets through output Frobenius 33 |
+
 The bounded source-image counts are unions over sources with Frobenius at most
 35, grouped by output Frobenius. They are not unrestricted image cardinalities,
-nor counts at one fixed source Frobenius. The finite checks supplement the
+nor counts at one fixed source Frobenius. The multiplicity-three cutoff gives completeness within its separately stated output range. The finite checks supplement the
 written proofs for all parameters and do not establish ratio asymptotics or
-a complete characterization of the image.
+a closed-form classification at every multiplicity.
 
 ## Formal statements
 

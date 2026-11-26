@@ -20,7 +20,7 @@
 \title{Extensions of Ma--Zhang's negative answer to Delgado, S\"uer and Ye\c{s}il's symmetrization question}
 \author{Haobo Ma\\\small ChronoAI Pte Ltd, Singapore
 \and Wenlin Zhang\\\small National University of Singapore;\\\small ChronoAI Pte Ltd, Singapore}
-\date{24 November 2026}
+\date{25 November 2026}
 
 
 \usepackage{tabularx}
@@ -30,6 +30,7 @@
 \newcommand{\PF}{\operatorname{PF}}
 \newcommand{\AS}{\mathcal{AS}}
 \newcommand{\im}{\operatorname{im}}
+\newcommand{\Ap}{\operatorname{Ap}}
 \begin{document}
 \maketitle
 \begin{abstract}
@@ -47,6 +48,11 @@ under the full-cell restriction the minimum is $9$.
 We give infinite excluded families, retain the exact ordinary fiber and
 fixed-point characterization, and distinguish fixed-source image bounds
 from fixed-target counts.
+For symmetric targets of multiplicity three and Frobenius number $2h-1$,
+there is one image for $h=3,4,5$ and exactly two for every $h\geq6$.
+We give both families and explicit sources. At arbitrary output
+multiplicity $r<h$, source multiplicity is at most $2r-2$ and source
+Frobenius number is at most $2h+2r-5$, giving a finite membership test.
 \end{abstract}
 
 \section{The question and the row-deletion map}
@@ -55,7 +61,7 @@ numerical semigroups to symmetric numerical sets \cite[Theorem~4.2]{DSY}.
 They ask whether $\Phi$ is surjective \cite[Section~5, p.~9, final paragraph]{DSY}.
 The distinction between a numerical set and a numerical semigroup is decisive:
 the former may contain $1$ without being all of $\N$, whereas the latter cannot.
-The omission obstruction and its consequences were established in \cite[Section~2]{MZ}. We retain those arguments and give the prefix and full-cell obstructions below.
+The omission obstruction and its consequences were established in \cite[Section~2]{MZ}. We retain those arguments and the prefix and full-cell obstructions of \cite[Sections~3--6]{MZ4}, and characterize the image at multiplicities two and three.
 An earlier construction of Ye\c{s}il treats almost symmetric semigroups whose
 nonmaximal pseudo-Frobenius numbers form a consecutive block
 \cite[Lemma~5.7]{Y}; the general construction in \cite[Theorem~4.2]{DSY}
@@ -480,6 +486,226 @@ targets through Frobenius number $23$, the family for $5\leq h\leq100$,
 and all numerical-semigroup sources through Frobenius number $18$.
 
 
+\section{Multiplicity three and a general membership bound}\label{sec:three}
+The multiplicity of a numerical set is its least positive element.
+We thank Mehmet Ye\c{s}il for suggesting the question at multiplicity three.
+For a symmetric target $T$ with $F(T)=2h-1$, write
+$B=T\cap[0,2h-1]$; complete every displayed $B$ by adjoining $[2h,\infty)$.
+For $h\geq3$, define
+\begin{align}
+ E_h&=\{0\}\cup\{3,5,\ldots,2h-3\}\cup\{2h-2\},\label{eq:E}\\
+ P_h&=\langle3,h+1\rangle\cap[0,2h-1]
+                 &&\text{if }h\equiv0,1\pmod3.\label{eq:P01}
+\end{align}
+When $h=3k+2$ with $k\geq1$, put
+\begin{equation}\label{eq:P2}
+ P_h=\{3j:0\leq j\leq k\}
+ \cup\{3k+2+3j:0\leq j\leq k\}
+ \cup\{3k+4+3j:0\leq j\leq k-1\}.
+\end{equation}
+Here $\langle u,v\rangle=\{\alpha u+\beta v:\alpha,\beta\in\N\}$.
+
+\begin{theorem}\label{thm:classification}
+Let $T$ be a symmetric numerical set of multiplicity three, with
+$F(T)=2h-1$. Then $h\geq3$, and $T=\Phi(S)$ for a proper almost symmetric
+numerical semigroup $S$ if and only if $B=E_h$ or $B=P_h$.
+The families coincide for $h=3,4,5$ and are distinct for every $h\geq6$.
+\end{theorem}
+
+The small cases make the difference from multiplicity two visible:
+\begin{center}
+\begin{tabular}{cll}
+\toprule
+$h$ & $E_h$ & $P_h$\\
+\midrule
+3 & $0,3,4$ & $0,3,4$\\
+4 & $0,3,5,6$ & $0,3,5,6$\\
+5 & $0,3,5,7,8$ & $0,3,5,7,8$\\
+6 & $0,3,5,7,9,10$ & $0,3,6,7,9,10$\\
+8 & $0,3,5,7,9,11,13,14$ & $0,3,6,8,10,11,13,14$\\
+\bottomrule
+\end{tabular}
+\end{center}
+
+The proof reduces source multiplicity to three or four, then uses elementary
+Ap\'ery thresholds. For related work on source multiplicities three and four,
+see Rosales~\cite{Rosales}; the issue here is their common row-deletion
+image. Almost symmetry and its gap reflection are treated in
+Nari~\cite[Section~2]{Nari}. We include the needed arguments so that the
+classification uses no finite-search premise.
+
+
+\subsection{Residue chains and the source cutoff}
+\begin{lemma}\label{lem:rank}
+Let $S$ be a proper almost symmetric numerical semigroup, using the
+notation $A,F,h,b_i$ of Theorem~\ref{thm:bound}. If $h\geq2$, write
+$\mu=a_1$ for the source multiplicity and $r=b_1$ for the output multiplicity.
+Then $A$ consists of exactly $r-1$ nonempty residue chains modulo $\mu$,
+each with step $\mu$ and no internal missing element.
+\end{lemma}
+\begin{proof}
+In any residue class occurring in $A$, addition by $\mu$ fills the chain
+from its first element to its last element below $F$. Its last element
+is in $(F-\mu,F]$, and each element in this interval is a chain end.
+Thus the number of chains is $|A\cap(F-\mu,F]|=r-1$ by~the rank formula in Theorem~\ref{thm:bound}
+at $i=1$.
+\end{proof}
+
+\begin{theorem}\label{thm:cutoff}
+Let $S$ be a proper almost symmetric numerical semigroup. Suppose $\Phi(S)$ has multiplicity $r$ and Frobenius number $2h-1$,
+with $h>r$. Then
+\begin{equation}\label{eq:bound}
+ \mu(S)\leq2r-2,\qquad
+ 2h-1\leq F(S)\leq2h+2r-5.
+\end{equation}
+\end{theorem}
+\begin{proof}
+If $F<2\mu$, the chain of residue zero has at most two elements, while
+each other chain has at most one: its first element is greater than $\mu$.
+Lemma~\ref{lem:rank} would give $h\leq2+(r-2)=r$. Thus $F\geq2\mu$.
+All $f=1,\ldots,\mu-1$ are gaps, and $f+\mu\leq F$.
+At most $r-2$ of these translates can belong to $A$, one in each nonzero
+active residue class. For at least $\mu-r+1$ values of $f$, therefore,
+$f+\mu\notin S$, so $f\notin\PF(S)$. The gap-reflection identity in
+Theorem~\ref{thm:bound} puts their distinct complements $F-f$ in $A$.
+All these complements lie in $(F-\mu,F]$, which has exactly $r-1$
+elements of $A$. Hence $\mu-r+1\leq r-1$.
+
+No pseudo-Frobenius gap is divisible by $\mu$. Two such gaps cannot
+have the same nonzero residue: their positive difference is a multiple
+of $\mu$ in $S$, contradicting the pseudo-Frobenius property of the
+smaller gap. Thus $1\leq t\leq\mu-1$.
+Since $h=F+1-g$ and $2g=F+t$, we have $F=2h+t-2$.
+Combining these facts gives~\eqref{eq:bound}.
+\end{proof}
+
+Theorem~\ref{thm:one} excludes multiplicity one. For a symmetric numerical set with $h\geq2$, its multiplicity is at most
+$h$: one of $h-1,h$ must be an element. If $r=h$, symmetry forces
+$B=\{0\}\cup[h,2h-2]$; this completed set is a numerical semigroup
+and is fixed by $\Phi$. The remaining one-gap set is
+$\N\setminus\{1\}$, also fixed by $\Phi$.
+For every remaining symmetric target, with $2\leq r<h$, Theorem~\ref{thm:cutoff} gives
+an exact finite membership procedure: enumerate the numerical semigroups
+with $2h-1\leq F\leq2h+2r-5$ and multiplicity at most $2r-2$, retain
+the almost symmetric ones, and compare their compressed labels with $B$.
+Necessity follows from the theorem; sufficiency follows by exhibiting a
+source. This procedure decides membership, not the number of all sources.
+
+
+\subsection{Proof of the classification}\label{sec:three-proof}
+When $r=3$ and $h=3$, symmetry forces $B=\{0,3,4\}$, realized by
+$\langle3,4\rangle$. Assume henceforth that $h\geq4$.
+Theorem~\ref{thm:cutoff} gives $\mu\leq4$. Multiplicity two is impossible:
+its even chain already contains zero and the sole odd residue class
+can first occur only beyond $F$, since otherwise adding two would put the
+odd gap $F$ in $S$. Thus it has one active chain, not two.
+
+\subsubsection{Source multiplicity four}
+There are two active residues, $0$ and $\rho\in\{1,2,3\}$.
+Since $h>3$, the proof of Theorem~\ref{thm:cutoff} gives $F\geq8$;
+as $8\in S$, actually $F\geq9$.
+For $f\in\{1,2,3\}\setminus\{\rho\}$, the integer $f+4$ is a gap.
+Hence the two complements $F-f$ lie in the two active residue classes.
+If $4+\rho$ were also a gap, all three complements would belong to
+$A\cap(F-4,F]$, contradicting its cardinality two. Thus $4+\rho\in A$.
+The complement residues now give:
+\begin{itemize}
+\item If $\rho=1$, then $F\equiv3\pmod4$. The complement $F-1$ has
+inactive residue two, so $1\in\PF(S)$. But $5\in S$ and $1+5=6\notin S$,
+a contradiction.
+\item If $\rho=2$, then $F$ is odd and $6\in S$. The two chains are
+precisely $A=\{0\}\cup\{4,6,\ldots,F-1\}$. Their cardinality gives
+$F=2h+1$.
+\item If $\rho=3$, then $F\equiv1\pmod4$, and $3\in\PF(S)$ because
+$F-3$ has inactive residue two. If $10\leq F$, its inactive residue
+makes it a gap. But $3\in\PF(S)$ and $7\in S$ imply $10\in S$.
+Hence $10>F$. Thus $F=9$, $A=\{0,4,7,8\}$ and $h=4$.
+\end{itemize}
+In the second case the source is
+\begin{equation}\label{eq:even-source}
+ S_h=\{0\}\cup\{4,6,\ldots,2h\}\cup[2h+2,\infty).
+\end{equation}
+Its pseudo-Frobenius gaps are exactly $2,2h-1,2h+1$: each earlier odd
+gap fails on addition by four, while the displayed three satisfy the
+definition. Its genus is $h+2$, so it is almost symmetric of type three.
+Deleting $2$ and $2h-1$ sends its elements below $F$ to $E_h$.
+This also proves existence of $E_h$ for every $h\geq3$.
+In the last case the deleted gaps are $3,6$, giving $E_4=P_4$.
+
+\subsubsection{Source multiplicity three}
+Let the first elements in residues one and two be
+$w_1=3\alpha+1$ and $w_2=3\beta+2$, where $\alpha,\beta\geq1$.
+These are the nonzero elements of $\Ap(S,3)$.
+Addition gives $\beta\leq2\alpha$ and $\alpha\leq2\beta+1$.
+Counting gaps in these two residues yields
+\[
+ g=\alpha+\beta,\qquad
+ F=\max(3\alpha-2,3\beta-1).
+\]
+The residue argument in Theorem~\ref{thm:cutoff} gives $t\in\{1,2\}$.
+Substitution in $2g=F+t$ leaves four cases:
+\begin{center}
+\begin{tabular}{cccc}
+\toprule
+$F$ & $t$ & Threshold relation & $h$\\
+\midrule
+$3\alpha-2$ & 1 & $\alpha=2\beta+1$ & $3\beta+1$\\
+$3\beta-1$ & 1 & $\beta=2\alpha$ & $3\alpha$\\
+$3\alpha-2$ & 2 & $\alpha=2\beta$ & $3\beta-1$\\
+$3\beta-1$ & 2 & $\beta=2\alpha-1$ & $3\alpha-2$\\
+\bottomrule
+\end{tabular}
+\end{center}
+In the first two rows the larger threshold is twice the smaller one.
+Thus $S=\langle3,h+1\rangle$, a symmetric semigroup, and nothing is
+deleted. Its output is~\eqref{eq:P01}.
+
+In either type-two row there is exactly one deleted gap. The retained
+labels $A\sqcup(F-A)$ are reflection-invariant, so the singleton deleted
+set is also reflection-invariant. It is therefore $\{F/2\}=\{h\}$.
+Every source element greater than $h$ decreases by one; all others stay.
+In the third row write $\beta=k+1$, so $h=3k+2$ and $k\geq1$.
+Here
+\[
+ A=\{3j:0\leq j\leq2k+1\}
+   \cup\{3k+5+3j:0\leq j\leq k-1\}.
+\]
+Decreasing exactly the elements above $3k+2$ gives~\eqref{eq:P2}.
+These sources exist for every $k\geq1$: the semigroup
+$\langle3,3k+5,6k+7\rangle$ has Ap\'ery set
+$\{0,6k+7,3k+5\}$ and pseudo-Frobenius gaps $3k+2,6k+4$.
+Indeed adding three to either gap gives its threshold, and adding either
+nonzero threshold gives an element; all other gaps fail on addition by
+three. Thus its type is two and $2g=F+2$.
+
+In the fourth row put $\alpha=a\geq2$, giving $h=3a-2$.
+The elements of $A$ before deletion are the multiples of three through $6a-6$
+and $3a+1,3a+4,\ldots,6a-5$. After deleting the gap $3a-2$, they become
+\[
+ \{3j:0\leq j\leq2a-2\}
+ \cup\{3a-1+3j:0\leq j\leq a-2\}.
+\]
+This is exactly $\langle3,3a-1\rangle\cap[0,6a-5]$, again $P_h$.
+For $h\geq4$, all possible sources have now been exhausted, and the constructions give
+both families. The lists for $h=3,4,5$ agree. For $h\geq6$, $6\in P_h$
+but $6\notin E_h$, proving distinctness and completing
+Theorem~\ref{thm:classification}.
+
+
+\subsection{An excluded target of multiplicity three}\label{sec:three-example}
+The symmetric set
+\[
+ V=\{0,3,4,7,8\}\cup[10,\infty)
+\]
+has multiplicity three but is neither $E_5$ nor $P_5$, and hence has no
+almost symmetric source. Writing $V\cap[0,9]=\{b_0,\ldots,b_4\}$ in
+increasing order, we have $b_i\geq2i$ for $0\leq i\leq4$.
+Thus those rank inequalities remain insufficient at multiplicity three.
+Frobenius number nine is minimal for this exclusion: at Frobenius numbers
+five and seven, the only multiplicity-three symmetric sets have left
+elements $\{0,3,4\}$ and $\{0,3,5,6\}$, respectively.
+
+
 \section{Finite verification}
 The accompanying program \texttt{verify\_prefix.py} enumerates all $840\,170$ proper
 numerical semigroups with $F(S)\leq35$. Among them $17\,842$ are
@@ -516,11 +742,20 @@ Thus a non-almost-symmetric source cannot produce $T_*$ either.
 Theorems~\ref{thm:bound} and~\ref{thm:two}, and Corollary~\ref{cor:example}, have written
 proofs for all parameters; the enumeration is finite supporting evidence.
 
+The program \texttt{verify\_multiplicity3.py} checks the two classified
+families, their explicit sources for $3\leq h\leq100$, the general cutoff,
+and the excluded example. Through source Frobenius $35$ there are $95$
+source instances with multiplicity-three outputs, counting repeated targets,
+and $11\,448$ instances of the general bound. The program independently
+enumerates all $1\,654$ proper sources through Frobenius $18$ by testing
+subsets for closure. For multiplicity three, the cutoff makes the image
+lists complete through output Frobenius $33$, with the $h=3$ boundary
+settled in Theorem~\ref{thm:classification}.
+
 \section{Relation to the neighboring questions}
 The fixed-source bound concerns the paper's $\mathcal S_F$, not all targets
 of a fixed output Frobenius number. The exact ordinary fiber strengthens
-the source's noninjectivity examples. The bound does not decide the asymptotic
-ratios plotted in Section~5 or which remaining targets occur.
+the source's noninjectivity examples. The bound does not decide the asymptotic ratios plotted in Section~5. Theorems~\ref{thm:classification} and~\ref{thm:cutoff} give a closed classification at multiplicity three and a finite membership test in general, but not closed families at higher multiplicity.
 
 \smallskip
 \begingroup\small
@@ -539,7 +774,7 @@ Section~5, pp.~8--9: how many outputs are semigroups? & Partial answer:
 all symmetric semigroups are attained (Corollary~\ref{cor:fixed});
 fixed-source bounds in Corollary~\ref{cor:source-bound}; no exact general count. \\
 Section~5, p.~9: image and plotted ratios & One full fiber is determined;
-the prefix and full-cell conditions are necessary, not sufficient (Theorems~\ref{thm:bound} and~\ref{thm:diagonal}); the complete image and ratio asymptotics are not covered. \\
+the prefix and full-cell conditions are necessary, not sufficient (Theorems~\ref{thm:bound} and~\ref{thm:diagonal}); closed families at higher multiplicity and ratio asymptotics are not covered. \\
 Ye\c{s}il's earlier consecutive-PF construction \cite[Lemma~5.7]{Y} &
 Prior symmetric-output proof cited; the omission of $1$ also holds for this
 restricted construction, by Theorem~\ref{thm:one}. \\
@@ -552,6 +787,9 @@ Corollary~\ref{cor:example} gives the minimal reduced nonimage;
 Theorem~\ref{thm:two} characterizes images containing $2$;
 Lemma~\ref{lem:cells} identifies the full-cell convention and
 Theorem~\ref{thm:diagonal} gives the minimal full-cell nonimage and a family. \\
+Targets of multiplicity three; general membership &
+Theorem~\ref{thm:classification} and Section~\ref{sec:three-example} give the exact images and a minimal prefix-compatible nonimage;
+Theorem~\ref{thm:cutoff} supplies the cutoff for the general membership test. \\
 \bottomrule
 \end{tabularx}
 \endgroup
@@ -567,7 +805,8 @@ together with $2g=F+t$. The namespace is
 \texttt{D5.S3.Combinatorics.Partitions.}\allowbreak
 \texttt{DelgadoSuerYesilPhiRefutation}.
 The four corollaries in Section~2, the prefix and rigidity theorems,
-the full-cell equivalence and the two minimality and family arguments
+the full-cell equivalence, the two minimality and family arguments,
+and the residue-chain, membership and multiplicity-three results
 have written proofs above; they are separate from these two formal declarations.
 The accompanying \texttt{verify\_base.py} uses exact integer and set operations to
 check the row-deletion identities, obstruction, ordinary fiber and fixed-point
@@ -584,7 +823,7 @@ counts throughout that range. The full-cell equivalence, small-target lists
 and excluded family are also checked by \texttt{verify\_diagonal.py} in
 the ranges stated above.
 
-\begin{thebibliography}{9}
+\begin{thebibliography}{99}
 \small
 \bibitem{DSY}
 M.~Delgado, M.~S\"uer and M.~Ye\c{s}il,
@@ -644,6 +883,16 @@ H.~Ma and W.~Zhang,
 \emph{A negative answer to Delgado, S\"uer and Ye\c{s}il's symmetrization question},
 revision~2 (2026), Section~2.
 \url{https://doi.org/10.5281/zenodo.24391331}.
+\bibitem{Nari} H.~Nari, \emph{Symmetries on almost symmetric numerical
+semigroups}, Semigroup Forum \textbf{86} (2013), 140--154.
+\url{https://doi.org/10.1007/s00233-012-9397-z}.
+\bibitem{Rosales} J.~C.~Rosales, \emph{Numerical Semigroups with
+Multiplicity Three and Four}, Semigroup Forum \textbf{71} (2005), 323--331.
+\url{https://doi.org/10.1007/s00233-005-0517-x}.
+
+\bibitem{MZ4} H.~Ma and W.~Zhang, \emph{Extensions of Ma--Zhang's negative answer
+to Delgado, S\"uer and Ye\c{s}il's symmetrization question}, revision 4 (2026),
+Sections~3--6. \url{https://doi.org/10.5281/zenodo.24507291}.
 \end{thebibliography}
 
 \smallskip
