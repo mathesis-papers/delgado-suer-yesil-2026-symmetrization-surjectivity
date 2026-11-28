@@ -31,6 +31,7 @@
     "concept_doi": "10.5281/zenodo.24391330",
     "current_version": 5,
     "doi": "10.5281/zenodo.24550129",
+    "kind": "note",
     "lean_source": {
       "revision": "f960cb09514c99f42fd07398f5240a77378ea4db",
       "url": "https://github.com/the-omega-institute/trureturing/blob/f960cb09514c99f42fd07398f5240a77378ea4db/D5/S3/Combinatorics/Partitions/DelgadoSuerYesilPhiRefutation.lean"
@@ -55,10 +56,12 @@
     "title": "Extensions of Ma–Zhang's negative answer to Delgado, Süer and Yeşil's symmetrization question",
     "versions": [
       {
+        "changelog": null,
         "previous_version": "4",
         "published_on": "2026-11-26T05:34:04.424086795Z",
         "revision": "5",
-        "version": 5
+        "version": 5,
+        "version_label": null
       }
     ],
     "work": "delgado-suer-yesil-2026-symmetrization-surjectivity"
